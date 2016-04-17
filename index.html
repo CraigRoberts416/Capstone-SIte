@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+    <head>
+    	<link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        
+        <title>Capstone</title>
+    
+    </head>
+    
+    <body>
+    <div id="left"></div>
+    <div id="right"></div>
+    <div id="top"></div>
+    <div id="bottom"></div>
+
+	<div id="siteBGCover">
+    </div>
+    <div id="siteBG">
+    
+    <iframe style="width:50vw; height:50vh;" src="https://www.youtube.com/embed/kqANd2aw8Mc?autoplay=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
+    <iframe style="width:50vw; height:50vh;" src="https://www.youtube.com/embed/kqANd2aw8Mc?autoplay=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
+    <iframe style="width:50vw; height:50vh;" src="https://www.youtube.com/embed/kqANd2aw8Mc?autoplay=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
+    <iframe style="width:50vw; height:50vh;" src="https://www.youtube.com/embed/kqANd2aw8Mc?autoplay=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
+    
+    </div>
+    
+    <div id="roomData">
+    Duration:<div id="duration"> 5:23:42</div><br/>
+    Temperature:<div id="temp"> 90</div>&deg;<br/> 
+    Brightness:<div id="bright"> 37</div> lm
+    </div>
+    
+    <div id="projectInfo">
+	<a href="#">project info</a><br/>
+    <a href="#">send tweet</a>
+    </div>
+
+    <div id="siteButtons">
+        <a class="sec" href="#">Inform</a>
+            <div class="innerMenu">
+                <a href="#">Send Message</a>
+                <textarea rows="4" cols="50">
+    At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
+                </textarea><br/>
+                <button>Submit</button>
+            </div><br/>
+        <a class="sec" href="#">Influence</a>
+            <div class="innerMenu">
+                    <a href="#">Change Temp</a>
+                        <form>
+                            <input type="range" name="points" min="0" max="10">
+                        </form>
+                    <a href="#">Change Lights</a>
+                        <form>
+                            <input type="range" name="points" min="0" max="10">
+                        </form>
+    
+            </div><br/>
+        <a class="sec" href="#">Entertain</a>
+            <div class="innerMenu">
+                    <a href="#">Send Entertainment</a>
+                    <a href="#">Remove Entertainment</a>
+            </div>
+    </div>
+    
+    <div id="latestTweet">
+		<h2>latest tweets</h2>
+        	
+            <div id="tweets"></div>
+        
+    </div>
+
+	<div id="stats">
+		<a href="#">Stats</a>
+    </div>
+    
+    </body>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+    <script type="text/javascript" src="js/twitterFetcher_min.js"></script>
+    <script type="text/javascript" src="js/exampleUsage.js"></script>
+	<script>
+	
+	$(document).ready(function() {
+		
+		$(".innerMenu").hide();
+		$(".innerMenu").data("open","no");
+		
+		$("#siteBGCover").click(function(e) {
+			$(".innerMenu").hide(500);
+			$("#siteButtons .sec").removeClass("line");
+		});
+		
+		$("#siteBGCover").dblclick(function(e) {
+			$("#siteButtons").toggle(500);
+			$("#latestTweet").toggle(500);
+		});
+		
+		$("#siteButtons .sec").click(function(e) {
+			var index = $(this).index("#siteButtons .sec");
+			$("#siteButtons .sec").addClass("line");
+			$(".innerMenu").hide(500);
+			$(".innerMenu").eq(index).show(500); 
+			$("#siteButtons .sec").eq(index).removeClass("line");
+		});
+		
+
+	});
+		
+	
+	</script>
+</html>
