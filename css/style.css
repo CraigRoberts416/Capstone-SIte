@@ -145,6 +145,7 @@ iframe{
   	left: 50%;
   	transform: translate(-50%, -50%);
 	z-index:20;
+	width:600px;
 }
 
 #siteButtons{
@@ -161,8 +162,31 @@ iframe{
 	display:block;
 }
 
+.innerMenu{
+	font-size:18px;
+	font-weight:100;
+	letter-spacing:2px;
+	color:white;
+	display:block;
+	position:relative;
+	letter-spacing:0;
+	text-transform:none;
+}
+
 
 .innerMenu a{
+	font-size:28px;
+	font-weight:500;
+	letter-spacing:2px;
+	color:white;
+	display:block;
+	position:relative;
+	letter-spacing:0;
+	text-transform:none;
+	text-decoration:underline;
+}
+
+.innerMenu a:hover{
 	font-size:28px;
 	font-weight:100;
 	letter-spacing:2px;
@@ -171,6 +195,8 @@ iframe{
 	position:relative;
 	letter-spacing:0;
 	text-transform:none;
+	text-decoration:underline;
+	opacity:.5;
 }
 
 #roomData{
@@ -295,5 +321,70 @@ iframe{
 		left: 0; right: 0;
 		height: 15px;
 		}
-		#top { top: 0; }
-		#bottom { bottom: 0; }
+#top { top: 0; }
+#bottom { bottom: 0; }
+		
+		
+/*---------------------------*/
+#bigTweetContainer{
+	color:black;
+	background-color:black;
+	width:100vw;
+	height:100vh;
+	position:absolute;
+}
+
+#bigTweet{
+	color:yellow;
+	font-size:60px;
+	position:absolute;
+	width:80%;
+	float:left;
+	width:100vw;
+	height:100vh;
+	width:100%;
+	height:100%;
+	text-align:center;
+	vertical-align:middle;
+	margin-top:3%;
+}
+
+#bigTweet ul{
+	list-style:none;
+}
+
+#bigTweet .user{
+	font-size:15px;
+	letter-spacing:5px;
+	text-transform:uppercase;
+}
+
+#entertainContainer{
+}
+
+#entertainment{
+	color:yellow;
+	font-size:60px;
+	position:absolute;
+	width:80%;
+	float:left;
+	width:100vw;
+	height:100vh;
+	width:100%;
+	height:100%;
+	text-align:center;
+	vertical-align:middle;
+	margin-top:3%;
+}
+
+#entertainment a{
+	text-decoration:underline;
+}
+
+#entConsole{
+	
+	color:white;
+	background-color:black;
+	z-index:2;
+	float:left;
+}

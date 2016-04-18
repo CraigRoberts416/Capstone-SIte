@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+    <head>
+    	<link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        
+        <title>Entertain</title>
+    
+    </head>
+    
+    <body>
+    
+    
+    <div id="entertainContainer">
+  
+            <div id="entertainment"></div>
+        
+    </div>
+    
+     <div id="entConsole">
+		<iframe width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    
+    </body>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+    <script type="text/javascript" src="js/twitterFetcher_min.js"></script>
+    <script type="text/javascript" src="js/exampleUsage.js"></script>
+	<script>
+	
+	$(document).ready(function() {
+		var saver1 = $("#entertainment").text();
+		var saver2 = "";
+		var videoHtml = "Craig Roberts ‎@CraigRoberts416 #wip #workinprogress #motiondesign #prattinstitute #pratt #design 								#jcole #communicationdesign https://www.instagram.com/p/BEBUZT_gcx_/";
+		$("#entertainment").hide();
+		setInterval(function(){ 
+		
+		twitterFetcher.fetch(config3); 
+		$("#entertainment").text(function(index, text) {
+			var text = $("#entertainment").text();
+			var html = urlify(text);
+			
+        });
+		
+		}, 5000);
+		
+		setInterval(function(){ 
+		
+		$("#entertainment").html(function(index, text) {
+			
+			var text = $("#entertainment").text();
+			var html = urlify(text);
+			videoHtml = html;
+            return html;
+        });
+		saver2 = $("#entertainment").text();
+		}, 1000);
+		
+		setInterval(function(){ 
+		
+		var test_str = $("#entertainment").text();
+		
+		if(test_str.indexOf("http://youtu.be/")>0){
+		if(saver1!=saver2){
+		$("#entConsole").html(function(index, text) {
+		
+		var start_pos = test_str.indexOf("http://youtu.be/")+16;
+		var end_pos = test_str.indexOf('O',start_pos);
+		var text_to_get = test_str.substring(start_pos,(start_pos +11));
+		var html = '<iframe style="width:100vw; height:100vh;" src="https://www.youtube.com/embed/'+text_to_get+'?autoplay=1;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
+		saver1 = saver2;
+            return html;
+        });
+		}
+		}
+		
+		if(test_str.indexOf("https://youtu.be/")>0){
+		if(saver1!=saver2){
+		$("#entConsole").html(function(index, text) {
+		
+		var start_pos = test_str.indexOf("https://youtu.be/")+17;
+		var end_pos = test_str.indexOf('O',start_pos);
+		var text_to_get = test_str.substring(start_pos,(start_pos +11));
+		var html = '<iframe style="width:100vw; height:100vh;" src="https://www.youtube.com/embed/'+text_to_get+'?autoplay=1;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
+		saver1 = saver2;
+            return html;
+        });
+		}
+		}
+		
+		
+		
+		}, 60000);
+		
+		//600000
+		
+	});
+		
+	function urlify(text) {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function(url) {
+        return '<a href="' + url + '/">' + url + '</a>';
+    })
+    // or alternatively
+    // return text.replace(urlRegex, '<a href="$1">$1</a>')
+	}
+
+	</script>
+</html>

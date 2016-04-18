@@ -69,17 +69,12 @@
 // id "example1". Also automatically hyperlinks URLS and user mentions and
 // hashtags.
 var config1 = {
-  "id": '721761272317009921',
-  "domId": 'tweets',
-  "maxTweets": 3,
-  "enableLinks": false,
-  "showImages": false,
-  "showPermalinks": false,
-  "showInteraction": false,
-  "showUser": false
+  "id": '345170787868762112',
+  "domId": 'example1',
+  "maxTweets": 1,
+  "enableLinks": true
 };
-
-
+twitterFetcher.fetch(config1);
 
 
 // ##### Simple example 2 #####
@@ -89,34 +84,28 @@ var config1 = {
 // request to Twitter specifiying we would like results where possible in
 // English language.
 var config2 = {
-  "id": '721761272317009921',
-  "domId": 'bigTweet',
-  "maxTweets": 1,
-  "showImages": false,
-  "enableLinks": false,
+  "id": '347099293930377217',
+  "domId": 'example2',
+  "maxTweets": 5,
+  "enableLinks": true,
   "showUser": true,
-  "showTime": false,
-  "showInteraction": false,
+  "showTime": true,
   "lang": 'en'
 };
-
+twitterFetcher.fetch(config2);
 
 
 // ##### Simple example 3 #####
 // A simple example to get latest 5 tweets for #API tag and shows any images
 // attached to tweets.
 var config3 = {
-  "id": '721378921632149507',
-  "domId": 'entertainment',
-  "maxTweets": 1,
-  "showImages": false,
-  "enableLinks": false,
-  "showUser": true,
-  "showTime": false,
-  "showInteraction": false,
-  "lang": 'en'
+  "id": '502160051226681344',
+  "domId": 'example3',
+  "maxTweets": 5,
+  "enableLinks": true,
+  "showImages": true
 };
-
+twitterFetcher.fetch(config3);
 
 
 // ##### Advanced example #####
@@ -144,7 +133,7 @@ function dateFormatter(date) {
   return date.toTimeString();
 }
 
-
+twitterFetcher.fetch(config4);
 
 
 // ##### Advanced example 2 #####
@@ -178,7 +167,7 @@ function handleTweets(tweets){
     element.innerHTML = html;
 }
 
-
+twitterFetcher.fetch(config5);
 
 
 // ##### Advanced example #####
@@ -212,7 +201,7 @@ function momentDateFormatter(date, dateString) {
   return moment(dateString).fromNow();
 }
 
-
+twitterFetcher.fetch(config6);
 
 
 // ##### CommonJS example (e.g. Browserify) #####
@@ -255,7 +244,7 @@ var config8 = {
   "customCallback": populateTpl
 };
 
-
+twitterFetcher.fetch(config8);
 
 function populateTpl(tweets){
   var element = document.getElementById('example8');
