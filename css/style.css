@@ -1,81 +1,81 @@
 @charset "UTF-8";
 /* CSS Document */
-font-face {
+@font-face {
 	font-family: 'Apercu';
-	src: url('fonts/Apercu-Black.eot');
-	src: local('☺'), url('fonts/Apercu-Black.woff') format('woff'), url('fonts/Apercu-Black.ttf') format('truetype'), url('fonts/Apercu-Black.svg') format('svg');
+	src: url('../fonts/Apercu-Black.eot');
+	src: local('☺'), url('../fonts/Apercu-Black.woff') format('woff'), url('../fonts/Apercu-Black.ttf') format('truetype'), url('../fonts/Apercu-Black.svg') format('svg');
 	font-weight: 900;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Apercu';
-	src: url('fonts/Apercu-BlackItalic.eot');
-	src: local('☺'), url('fonts/Apercu-BlackItalic.woff') format('woff'), url('fonts/Apercu-BlackItalic.ttf') format('truetype'), url('fonts/Apercu-BlackItalic.svg') format('svg');
+	src: url('../fonts/Apercu-BlackItalic.eot');
+	src: local('☺'), url('../fonts/Apercu-BlackItalic.woff') format('woff'), url('../fonts/Apercu-BlackItalic.ttf') format('truetype'), url('../fonts/Apercu-BlackItalic.svg') format('svg');
 	font-weight: 900;
 	font-style:italic;
 }
 
 @font-face {
 	font-family: 'Apercu';
-	src: url('fonts/Apercu-Bold.eot');
-	src: local('☺'), url('fonts/Apercu-Bold.woff') format('woff'), url('fonts/Apercu-Bold.ttf') format('truetype'), url('fonts/Apercu-Bold.svg') format('svg');
+	src: url('../fonts/Apercu-Bold.eot');
+	src: local('☺'), url('../fonts/Apercu-Bold.woff') format('woff'), url('../fonts/Apercu-Bold.ttf') format('truetype'), url('../fonts/Apercu-Bold.svg') format('svg');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Apercu';
-	src: url('fonts/Apercu-BoldItalic.eot');
-	src: local('☺'), url('fonts/Apercu-BoldItalic.woff') format('woff'), url('fonts/Apercu-BoldItalic.ttf') format('truetype'), url('fonts/Apercu-BoldItalic.svg') format('svg');
+	src: url('../fonts/Apercu-BoldItalic.eot');
+	src: local('☺'), url('../fonts/Apercu-BoldItalic.woff') format('woff'), url('../fonts/Apercu-BoldItalic.ttf') format('truetype'), url('../fonts/Apercu-BoldItalic.svg') format('svg');
 	font-weight: bold;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Apercu';
-	src: url('fonts/Apercu-Italic.eot');
-	src: local('☺'), url('fonts/Apercu-Italic.woff') format('woff'), url('fonts/Apercu-Italic.ttf') format('truetype'), url('fonts/Apercu-Italic.svg') format('svg');
+	src: url('../fonts/Apercu-Italic.eot');
+	src: local('☺'), url('../fonts/Apercu-Italic.woff') format('woff'), url('../fonts/Apercu-Italic.ttf') format('truetype'), url('../fonts/Apercu-Italic.svg') format('svg');
 	font-weight: normal;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Apercu';
-	src: url('fonts/Apercu-Light.eot');
-	src: local('☺'), url('fonts/Apercu-Light.woff') format('woff'), url('fonts/Apercu-Light.ttf') format('truetype'), url('fonts/Apercu-Light.svg') format('svg');
+	src: url('../fonts/Apercu-Light.eot');
+	src: local('☺'), url('../fonts/Apercu-Light.woff') format('woff'), url('../fonts/Apercu-Light.ttf') format('truetype'), url('../fonts/Apercu-Light.svg') format('svg');
 	font-weight: 200;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Apercu';
-	src: url('fonts/Apercu-LightItalic.eot');
-	src: local('☺'), url('fonts/Apercu-LightItalic.woff') format('woff'), url('fonts/Apercu-LightItalic.ttf') format('truetype'), url('fonts/Apercu-LightItalic.svg') format('svg');
+	src: url('../fonts/Apercu-LightItalic.eot');
+	src: local('☺'), url('../fonts/Apercu-LightItalic.woff') format('woff'), url('../fonts/Apercu-LightItalic.ttf') format('truetype'), url('../fonts/Apercu-LightItalic.svg') format('svg');
 	font-weight: 200;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Apercu';
-	src: url('fonts/Apercu-Medium.eot');
-	src: local('☺'), url('fonts/Apercu-Medium.woff') format('woff'), url('fonts/Apercu-Medium.ttf') format('truetype'), url('fonts/Apercu-Medium.svg') format('svg');
+	src: url('../fonts/Apercu-Medium.eot');
+	src: local('☺'), url('../fonts/Apercu-Medium.woff') format('woff'), url('../fonts/Apercu-Medium.ttf') format('truetype'), url('../fonts/Apercu-Medium.svg') format('svg');
 	font-weight: 600;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Apercu';
-	src: url('fonts/Apercu-MediumItalic.eot');
-	src: local('☺'), url('fonts/Apercu-MediumItalic.woff') format('woff'), url('fonts/Apercu-MediumItalic.ttf') format('truetype'), url('fonts/Apercu-MediumItalic.svg') format('svg');
+	src: url('../fonts/Apercu-MediumItalic.eot');
+	src: local('☺'), url('../fonts/Apercu-MediumItalic.woff') format('woff'), url('../fonts/Apercu-MediumItalic.ttf') format('truetype'), url('../fonts/Apercu-MediumItalic.svg') format('svg');
 	font-weight: 600;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Apercu';
-	src: url('fonts/Apercu-Mono.eot');
-	src: local('☺'), url('fonts/Apercu-Mono.woff') format('woff'), url('fonts/Apercu-Mono.ttf') format('truetype'), url('fonts/Apercu-Mono.svg') format('svg');
+	src: url('../fonts/Apercu-Mono.eot');
+	src: local('☺'), url('../fonts/Apercu-Mono.woff') format('woff'), url('../fonts/Apercu-Mono.ttf') format('truetype'), url('../fonts/Apercu-Mono.svg') format('svg');
 	font-weight: 100;
 	font-style: normal;
 }
@@ -83,8 +83,8 @@ font-face {
 
 @font-face {
 	font-family: 'Apercu';
-	src: url('fonts/Apercu-Regular.eot');
-	src: local('☺'), url('fonts/Apercu-Regular.woff') format('woff'), url('fonts/Apercu-Regular.ttf') format('truetype'), url('fonts/Apercu-Regular.svg') format('svg');
+	src: url('../fonts/Apercu-Regular.eot');
+	src: local('☺'), url('../fonts/Apercu-Regular.woff') format('woff'), url('../fonts/Apercu-Regular.ttf') format('truetype'), url('../fonts/Apercu-Regular.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
