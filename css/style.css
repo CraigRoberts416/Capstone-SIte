@@ -98,6 +98,7 @@ html{
 	margin:0;
 	font-family:Apercu;
 	position:relative;
+	background-color:black;
 }
 
 body{
@@ -148,17 +149,24 @@ iframe{
 	width:600px;
 }
 
-#siteButtons{
+#siteButtons h1{
+	color:yellow;
 	font-size:50px;
 	font-weight:bold;
-	text-transform:uppercase;
 	line-height:40px;
-	letter-spacing:20px;
+	letter-spacing:0px;
+	line-height:1em;
 }
 
 #siteButtons a{
 	position:relative;
-	display:block;
+	display:inline;
+	color:white;
+	margin:10px;
+}
+
+#siteButtons a:hover{
+	opacity:.5;
 }
 
 .innerMenu{
@@ -229,7 +237,7 @@ iframe{
 }
 
 #projectInfo{
-	font-size:24px;
+	font-size:16px;
 	font-weight:100;
 	z-index:2;
 	float:right;
@@ -244,7 +252,7 @@ iframe{
 }
 
 #stats{
-	font-size:24px;
+	font-size:16px;
 	font-weight:100;
 	float:right;
 	color:white;
@@ -270,7 +278,7 @@ iframe{
 }
 
 #latestTweet{
-	font-size:24px;
+	font-size:16px;
 	font-weight:100;
 	float:right;
 	color:white;
@@ -283,16 +291,16 @@ iframe{
 }
 
 #latestTweet h2{
-	font-size:24px;
+	font-size:16px;
 	font-weight:100;
 	color:yellow;
 	text-align:left;
 }
 
 #tweets{
-	width:400px;
-	font-size:16px;
-	line-height:1em;
+	width:200px;
+	font-size:12px;
+	line-height:1.4em;
 	text-align:left;
 	font-weight:200;
 }
@@ -302,7 +310,7 @@ iframe{
 }
 
 .timePosted {
-	font-size:15px;
+	font-size:10px;
 	font-weight:900;
 	text-transform:uppercase;
 	letter-spacing:5px;
@@ -326,7 +334,33 @@ iframe{
 		}
 #top { top: 0; }
 #bottom { bottom: 0; }
-		
+	
+	
+#delayNotice{
+	color:white;
+	font-size:15px;
+	font-weight:200;
+	letter-spacing:1px;
+	text-align:center;
+	z-index:10;
+	margin-bottom:50px;
+}
+
+#liveNotice{
+	text-align:center;
+	color:red;
+	letter-spacing:10px;
+	font-size:20px;
+	margin-bottom:10px;
+	text-transform:uppercase;
+}
+
+.blink{
+	opacity:.3;
+}
+
+
+
 		
 /*---------------------------*/
 #bigTweetContainer{
@@ -390,13 +424,4 @@ iframe{
 	background-color:black;
 	z-index:2;
 	float:left;
-}
-
-#delayNotice{
-	color:white;
-	text-transform:uppercase;
-	font-size:15px;
-	letter-spacing:5px;
-	z-index:10;
-	margin-bottom:50px;
 }

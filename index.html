@@ -15,10 +15,9 @@
     <div id="right"></div>
     <div id="top"></div>
     <div id="bottom"></div>
-
-	<div id="siteBGCover">
-    </div>
+    
     <div id="siteBG">
+    
     
     <iframe style="width:100vw; height:100vh;" src="https://www.youtube.com/embed/ezXy4AvNf8A?autoplay=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
    <!--<iframe style="width:50vw; height:50vh;" src="https://www.youtube.com/embed/ezXy4AvNf8A?autoplay=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
@@ -29,18 +28,18 @@
     
     
     
-    <div id="roomData">
+    <div id="roomData" class="outsideInfo">
     Duration:<div id="duration"> 5:23:42</div><br/>
     Temperature:<div id="temp"> 90</div>&deg;<br/> 
     Brightness:<div id="bright"> 37</div> lm
     </div>
     
-    <div id="projectInfo">
+    <div id="projectInfo"  class="outsideInfo">
 	<a href="#">project info</a><br/>
     <a href="#">send tweet</a>
     </div>
 
-    <div id="siteButtons">
+    <!--<div id="siteButtons">
     <div id="delayNotice">Disclaimer: 20 Second Delay</div>
         <a class="sec" href="#">Inform</a>
             <div class="innerMenu">
@@ -65,16 +64,29 @@
              <a href="#">Make Better or Worst</a>
                     Tweet, using the hashtag #CraigThesis, a youtube video link to have it appear in my environment.
             </div>
+    </div>-->
+    
+    <div id="siteButtons">
+    
+    <div id="liveNotice">Live Feed</div>
+    
+    <div id="delayNotice">Disclaimer: 20 Second Delay</div>
+        <h1>Make my experience more pleasurable</h1>
+        
+        <a href="#" id="tweetInstruct">Send a Tweet</a> | <a href="#" id="vidInstruct">Send a Youtube Vid</a> | <a href="#" id="roomInstruct">Change the Environment</a>
+        
+        <div id="description"></div>
+        
     </div>
     
-    <div id="latestTweet">
+    <div id="latestTweet"  class="outsideInfo">
 		<h2>latest tweets</h2>
         	
             <div id="tweets"></div>
         
     </div>
 
-	<div id="stats">
+	<div id="stats"  class="outsideInfo">
 		<a href="#">Stats</a>
     </div>
     
@@ -86,6 +98,7 @@
 	<script>
 	
 	$(document).ready(function() {
+		$("#description").hide();
 		
 		$(".innerMenu").hide();
 		$(".innerMenu").data("open","no");
@@ -109,6 +122,10 @@
 		});
 		
 setInterval(function(){ twitterFetcher.fetch(config1); }, 10000);
+
+setInterval(function(){ $("#liveNotice").toggleClass('blink'); }, 500)
+
+
 	});
 		
 	
