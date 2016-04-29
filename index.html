@@ -2,8 +2,14 @@
 <html>
 
     <head>
-    	<link rel="stylesheet" href="css/style.css">
+    	
+        <link rel="stylesheet" href="js/jquery-ui.theme.min.css">
+        <link rel="stylesheet" href="js/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="js/jquery-ui.min.css">
+        <link rel="stylesheet" href="js/jquery-ui.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        
         <meta charset="UTF-8">
         
         <title>Capstone</title>
@@ -15,6 +21,23 @@
     <div id="right"></div>
     <div id="top"></div>
     <div id="bottom"></div>
+    
+    <div id="capstoneInfo">
+    <div id="capstoneInfoText">
+    <h1>The Design Incubator</h1>
+    
+    <p>
+    Often, we make decisions behind a computer screen that affect the some one's real world environment. We have to option to either inform, influence or entertain someone on the other side of the screen, but we often don't get to see the person we are affecting. The goal of this experience is to allow you, the designer, to make changes to an environment while being able to witness your affects on your user. 
+    </p>
+    <p>
+    As designers, we make decisions for a group of users without them knowing it. We research and create personas that expose the vulnerabilities and aspiration of the audience. In the decision making process, we become the unelected representatives of our audience, and allow decision to be made based on what we know about our users. This is why I included my persona. The inclusion of my persona will allow you to be more informed as to who I am, and be more accountable for your decisions.
+    </p>
+    <p>
+    My goal as the user and subject of this experience is become more empathetic for the people I design for, by experiencing what is like to allow the media in my environment to be completely out of my control. For the firat four years of my deisgn experience, I have been researching the goals and aspirations of people, and also what gets their attention, and using that information to create content that <b>I</b> wanted them to experience. I wanted to experience what it is like to have mulitiple designers demainding your attention, changing your environment, and feeding you content that <i>may or may not</i> have my best intrest considered.
+    </p>
+    
+    </div>
+    </div>
     
     <div id="siteBG">
     
@@ -36,46 +59,47 @@
     
     <div id="projectInfo"  class="outsideInfo">
 	<a href="#">project info</a><br/>
-    <a href="#">send tweet</a>
     </div>
-
-    <!--<div id="siteButtons">
-    <div id="delayNotice">Disclaimer: 20 Second Delay</div>
-        <a class="sec" href="#">Inform</a>
-            <div class="innerMenu">
-                <a href="#">Send Message</a>
-                Log in to your twitter account and use the hashtag #CraigThesis to post information in my environment.
-            </div><br/>
-        <a class="sec" href="#">Influence</a>
-            <div class="innerMenu">
-            		<a href="#">Have an Impact</a>
-                   Temperature<br/>
-                        <form>
-                            <input type="range" name="points" min="0" max="10" value="1">
-                        </form>
-                    Light Brightness<br/>
-                        <form>
-                            <input type="range" name="points" min="0" max="10">
-                        </form>
-    
-            </div><br/>
-        <a class="sec" href="#">Entertain</a>
-            <div class="innerMenu">
-             <a href="#">Make Better or Worst</a>
-                    Tweet, using the hashtag #CraigThesis, a youtube video link to have it appear in my environment.
-            </div>
-    </div>-->
     
     <div id="siteButtons">
     
-    <div id="liveNotice">Live Feed</div>
-    
-    <div id="delayNotice">Disclaimer: 20 Second Delay</div>
-        <h1>Make my experience more pleasurable</h1>
+        <div id="liveNotice">Live Feed</div>
         
-        <a href="#" id="tweetInstruct">Send a Tweet</a> | <a href="#" id="vidInstruct">Send a Youtube Vid</a> | <a href="#" id="roomInstruct">Change the Environment</a>
+        <div id="delayNotice">Disclaimer: 20 Second Delay</div>
+            <h1>Can you make my experience <u>more or less</u> pleasurable?</h1>
+            
+            <a href="#" id="tweetInstruct" class="buttons">Tweet Me</a>  <a href="#" id="vidInstruct" class="buttons">Send a Vid</a>
+            
+          <div id="description"></div>
+          
+          <div id="dials">
+            
+            <div id="tempValue">
+            <h2>Temperature</h2>
+            
+            <h3>Cooler</h3>
+            	<input type="radio" name="temp" value="coolDown">  Cool Down <br>
+  				<input type="radio" name="temp" value="warmUp">  Warm Up <br>
+            </div>
+            
+            <div id="lightValue">
+            <h2>Lights</h2>
+            
+           <h3>Hue</h3>
+            <div id="hue"></div>
+            
+            <h3>Brightness</h3>
+            <div id="slider"></div>
+            
+            <h3>Saturation</h3>
+            <div id="satur"></div>
+            
+            
+            </div>
+            
+            
+          </div>
         
-        <div id="description"></div>
         
     </div>
     
@@ -86,18 +110,77 @@
         
     </div>
 
-	<div id="stats"  class="outsideInfo">
+	<!--<div id="stats"  class="outsideInfo">
 		<a href="#">Stats</a>
-    </div>
+    </div> -->
     
     </body>
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
     <script type="text/javascript" src="js/twitterFetcher_min.js"></script>
     <script type="text/javascript" src="js/exampleUsage.js"></script>
+
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.structure.css"></script>
+
+    <script type="text/javascript" src="js/jquery-ui.theme.css"></script>
+    
+    <script type="text/javascript" src="js/air_conditioners.js"></script>
+    
+    <script type="text/javascript" src="js/index.js"></script>
+    
+    <script type="text/javascript" src="js/wink-accessory.js"></script>
+    
 	<script>
 	
 	$(document).ready(function() {
+		
+		$("#slider").slider({
+			min: 1,
+     		max: 255,
+      		range: "min",
+      		value: 40,
+      		slide: function( event, ui ) {
+        		myFunction();
+				myFunction2();
+			}
+		});
+		
+		
+		
+		$("#satur").slider({
+			min: 1,
+     		max: 255,
+      		range: "min",
+      		value: 40,
+      		slide: function( event, ui ) {
+        		myFunction();
+				myFunction2();
+			}
+		});
+		
+		$("#hue").slider({
+			min: 1,
+     		max: 65535,
+      		range: "min",
+      		value: 30000,
+      		slide: function( event, ui ) {
+        		myFunction();
+				myFunction2();
+			}
+		});
+		
+		$( "#hue" ).css("background-image","url(images/hue.jpg)");
+		$( "#hue" ).css("height","10px");
+		$( "#hue" ).css("background-size","contain");
+		$( "#slider" ).css("background","-webkit-linear-gradient(left,black, white)");
+		$( "#satur" ).css("background","-webkit-linear-gradient(left,white, yellow)");
+		
+
+		$("#description").data('open','no');
+		$("#description").data('show','none');
 		$("#description").hide();
 		
 		$(".innerMenu").hide();
@@ -121,10 +204,80 @@
 			$("#siteButtons .sec").eq(index).removeClass("line");
 		});
 		
+		
+		$('#tweetInstruct').click(function(e) {
+			
+			
+			
+			
+			if( ($("#description").data('open') == 'yes') && ($("#description").data('show') == 'vid') ){
+				$("#description").html("Use hashtag <b>#CraigRobertsZone</b> to tweet a message into the space");
+				$("#description").data('show','tweet');
+			}
+			
+			else if( ($("#description").data('open') == 'yes') && ($("#description").data('show') == 'tweet') ){
+				$("#description").hide();
+				$("#description").data('open','no');
+			}
+			
+			
+			else if($("#description").data('open') == 'no'){
+            $("#description").html("Use hashtag <b>#CraigRobertsZone</b> to tweet a message into the space");
+			 $("#description").show();
+			 $("#description").data('open','yes');
+			 $("#description").data('show','tweet');
+			}
+			
+        });
+		
+		
+		$('#vidInstruct').click(function(e) {
+			
+			if( ($("#description").data('open') == 'yes') && ($("#description").data('show') == 'vid') ){
+				$("#description").hide();
+				$("#description").data('open','no');
+			}
+			
+			else if( ($("#description").data('open') == 'yes') && ($("#description").data('show') == 'tweet') ){
+				$("#description").html("Use hashtag <b>#CraigRobertsZone</b> to tweet a video into the space");
+				$("#description").data('show','vid');
+			}
+			
+			
+			else if($("#description").data('open') == 'no'){
+            $("#description").html("Use hashtag <b>#CraigRobertsZone</b> to tweet a video into the space");
+			$("#description").show();
+			$("#description").data('open','yes');
+			$("#description").data('show','vid');
+			}
+
+        });
+		
 setInterval(function(){ twitterFetcher.fetch(config1); }, 10000);
 
 setInterval(function(){ $("#liveNotice").toggleClass('blink'); }, 500)
 
+
+		function myFunction() {
+		   var brightness = $("#slider").slider("value");
+		   var hueness = $("#hue").slider("value");
+		   var sat = $("#satur").slider("value");
+		   var client = new XMLHttpRequest();
+		   client.open("PUT", "http://173.3.112.220/api/newdeveloper/lights/5/state");
+		   client.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+		   client.send('{"hue":'+hueness+',"sat": '+sat+',"bri":'+brightness+'}');
+		}
+		
+		
+		function myFunction2() {
+		   var brightness = $("#slider").slider("value");
+		   var hueness = $("#hue").slider("value");
+		   var sat = $("#satur").slider("value");
+		   var client = new XMLHttpRequest();
+		   client.open("PUT", "http://173.3.112.220/api/newdeveloper/lights/1/state");
+		   client.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+		   client.send('{"hue":'+hueness+',"sat": '+sat+',"bri":'+brightness+'}');
+		}
 
 	});
 		
