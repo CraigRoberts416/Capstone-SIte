@@ -25,7 +25,6 @@
     <div id="capstoneInfo">
     <div id="capstoneInfoText">
     <h1>The Design Incubator</h1>
-    
     <p>
     Often, we make decisions behind a computer screen that affect the some one's real world environment. We have to option to either inform, influence or entertain someone on the other side of the screen, but we often don't get to see the person we are affecting. The goal of this experience is to allow you, the designer, to make changes to an environment while being able to witness your affects on your user. 
     </p>
@@ -51,14 +50,14 @@
     
     
     
-    <div id="roomData" class="outsideInfo">
+    <!--<div id="roomData" class="outsideInfo">
     Duration:<div id="duration"> 5:23:42</div><br/>
     Temperature:<div id="temp"> 90</div>&deg;<br/> 
     Brightness:<div id="bright"> 37</div> lm
-    </div>
+    </div>-->
     
     <div id="projectInfo"  class="outsideInfo">
-	<a href="#">project info</a><br/>
+	<a href="#" >project info</a><br/>
     </div>
     
     <div id="siteButtons">
@@ -137,6 +136,21 @@
 	
 	$(document).ready(function() {
 		
+		$('#capstoneInfo').hide();
+		
+		$('#projectInfo a').click(function(e) {
+            $('#capstoneInfo').show();
+			 $("#capstoneInfo").animate({"opacity":"1"},1000);
+			
+        });
+		
+		$('#capstoneInfo').click(function(e) {
+			$("#capstoneInfo").animate({"opacity":"0"},1000);
+            $('#capstoneInfo').hide(200);
+			
+        });
+		
+		
 		$("#slider").slider({
 			min: 1,
      		max: 255,
@@ -186,12 +200,29 @@
 		$(".innerMenu").hide();
 		$(".innerMenu").data("open","no");
 		
-		$("#siteBGCover").click(function(e) {
+		$("#siteBG").click(function(e) {
 			$(".innerMenu").hide(500);
 			$("#siteButtons .sec").removeClass("line");
 		});
 		
-		$("#siteBGCover").dblclick(function(e) {
+		$("#left").click(function(e) {
+			$("#siteButtons").toggle(500);
+			$("#latestTweet").toggle(500);
+		});
+		
+		$("#right").click(function(e) {
+			$("#siteButtons").toggle(500);
+			$("#latestTweet").toggle(500);
+		});
+		
+		
+		$("#top").click(function(e) {
+			$("#siteButtons").toggle(500);
+			$("#latestTweet").toggle(500);
+		});
+		
+		
+		$("#bottom").click(function(e) {
 			$("#siteButtons").toggle(500);
 			$("#latestTweet").toggle(500);
 		});

@@ -147,6 +147,7 @@ iframe{
   	transform: translate(-50%, -50%);
 	z-index:20;
 	width:800px;
+	margin-top:40px;
 }
 
 #siteButtons h1{
@@ -383,7 +384,7 @@ iframe{
 
 
 #dials{
-	margin-top:100px;
+	margin-top:20px;
 	color:white;
 }
 
@@ -422,6 +423,14 @@ iframe{
 	float:right;
 }
 
+#lightValue h3{
+	margin-top:-40px;
+}
+
+#lightValue h2{
+	padding-bottom:20px;
+}
+
 .ui-slider {
 	margin-left:100px;
 	margin-bottom:60px;
@@ -431,6 +440,13 @@ iframe{
 }
 
 .ui-slider-handle { width: 30px; }
+
+
+
+
+
+
+
 		
 /*---------------------------*/
 #bigTweetContainer{
@@ -512,7 +528,7 @@ iframe{
 #capstoneInfo{
 	color:white;
 	background-color:black;
-	opacity:.95;
+	opacity:0;
 	width:100%;
 	width:100vw;
 	height:80%;
