@@ -1,4 +1,45 @@
-<!doctype html>
+<?php
+require_once('TwitterAPIExchange.php');
+/** Set access tokens here - see: https://dev.twitter.com/apps/ **/
+$settings = array(
+'oauth_access_token' => "352037987-gmk04jPQTrlrdXl74E5e1n3GnPko6CAsuDA0lL1E",
+'oauth_access_token_secret' => "csHsci4QS9J28hbeBSCkyhwkbMExqbMvEGGfWP0qSaem4",
+'consumer_key' => "23CzECqKmyTwwIQGLtGrXkBtL",
+'consumer_secret' => "iAUBN3OIwErlvKunpegojiP0sWNN8Iolfk3CVPUEXbKQMzCPq5"
+);
+
+//$url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
+$url = "https://api.twitter.com/1.1/search/tweets.json";
+
+$requestMethod = "GET";
+
+if (isset($_GET['user']))  {$user = $_GET['user'];}  else {$user  = "CraigRoberts416";}
+
+if (isset($_GET['count'])) {$count = $_GET['count'];} else {$count = 20;}
+
+//$getfield = "?screen_name=$user&count=$count";
+$getfield = "?q=%23CraigRobertsRoom&count=1";
+
+$twitter = new TwitterAPIExchange($settings);
+$string = json_decode($twitter->setGetfield($getfield)
+->buildOauth($url, $requestMethod)
+->performRequest(),$assoc = TRUE);
+
+
+
+if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string[errors][0]["message"]."</em></p>";exit();}
+
+
+foreach($string['statuses'] as $items)
+    {
+		
+		
+		?>
+    
+    
+    
+    
+    <!doctype html>
 <html>
 
     <head>
@@ -12,6 +53,10 @@
     
     <body>
     
+    
+    <?php
+        echo "<div id='tweetFeed'style='opacity:0'>". $items['entities']['urls'][0]['expanded_url']."</div>";
+	?>
     
     <div id="entertainContainer">
   
@@ -32,49 +77,9 @@
 	<script>
 	
 	$(document).ready(function() {
-		var saver1 = $("#entertainment").text();
-		var saver2 = "";
-		var oldText1 = "";
-		var oldText2 = "";
-		var newText = "";
-		var savers = [];
-		
-		var i=0;
-		var j=0;
-		var videoHtml = "Craig Roberts ‎@CraigRoberts416 #wip #workinprogress #motiondesign #prattinstitute #pratt #design 								#jcole #communicationdesign https://www.instagram.com/p/BEBUZT_gcx_/";
-		
+		var saver1 = $("#tweetFeed").text();
+		//alert(saver1);
 		$("#entertainment").hide();
-		setInterval(function(){ 
-		
-		twitterFetcher.fetch(config3); 
-		$("#entertainment").text(function(index, text) {
-			var text = $("#entertainment").text(); 
-			savers[i] = text;
-			//alert(savers[i].trim());
-			i++;
-			var html = urlify(text);
-			
-        });
-		
-		}, 5000);
-		
-		setInterval(function(){ 
-		
-		$("#entertainment").html(function(index, text) {
-			
-			var text = $("#entertainment").text();
-			var html = urlify(text);
-			videoHtml = html;
-			i++;
-			j = i-2;
-			savers.push(text.toLowerCase()); 
-			//alert(text);
-			return html;
-        });
-		
-		saver2 = $("#entertainment").text();
-		
-		}, 5000);
 		
 		
 		
@@ -82,67 +87,68 @@
 		
 		setInterval(function(){ 
 		
-		var test_str = $("#entertainment").text();
+		var test_str = $("#tweetFeed").text();
 		
 		if(test_str.indexOf("http://youtu.be/")>0){
-		if(saver1!=saver2){
+		//if(saver1!=saver2){
 		$("#entConsole").html(function(index, text) {
 		
 		var start_pos = test_str.indexOf("http://youtu.be/")+16;
 		var end_pos = test_str.indexOf('O',start_pos);
 		var text_to_get = test_str.substring(start_pos,(start_pos +11));
 		var html = '<iframe style="width:100vw; height:100vh;" src="https://www.youtube.com/embed/'+text_to_get+'?autoplay=1;loop=1;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
-		saver1 = saver2;
+		//saver1 = saver2;
             return html;
         });
-		}
+		//}
 		}
 		
 		else if(test_str.indexOf("https://youtu.be/")>0){
-		if(saver1!=saver2){
+		//if(saver1!=saver2){
 		$("#entConsole").html(function(index, text) {
 		
 		var start_pos = test_str.indexOf("https://youtu.be/")+17;
 		var end_pos = test_str.indexOf('O',start_pos);
 		var text_to_get = test_str.substring(start_pos,(start_pos +11));
 		var html = '<iframe style="width:100vw; height:100vh;" src="https://www.youtube.com/embed/'+text_to_get+'?autoplay=1;loop=1;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
-		saver1 = saver2;
+		//saver1 = saver2;
             return html;
         });
-		}
+		//}
 		}
 		
 		else if(test_str.indexOf("https://www.youtube.com/watch?v")>0){
-		if(saver1!=saver2){
+		//if(saver1!=saver2){
+
 		$("#entConsole").html(function(index, text) {
 		var start_pos = test_str.indexOf("https://www.youtube.com/watch?v")+32;
 		var end_pos = test_str.indexOf('O',start_pos);
 		var text_to_get = test_str.substring(start_pos,(start_pos +11));
 		//alert(text_to_get);
 		var html = '<iframe style="width:100vw; height:100vh;" src="https://www.youtube.com/embed/'+text_to_get+'?autoplay=1;loop=1;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
-		saver1 = saver2;
+		//saver1 = saver2;
             return html;
         });
-		}
+		//}
 		}
 		
 		else if(test_str.indexOf("http://www.youtube.com/watch?v")>0){
-		if(saver1!=saver2){
+		//if(saver1!=saver2){
 		$("#entConsole").html(function(index, text) {
 		var start_pos = test_str.indexOf("http://www.youtube.com/watch?v")+31;
 		var end_pos = test_str.indexOf('O',start_pos);
 		var text_to_get = test_str.substring(start_pos,(start_pos +11));
 		//alert(text_to_get);
 		var html = '<iframe style="width:100vw; height:100vh;" src="http://www.youtube.com/embed/'+text_to_get+'?autoplay=1;loop=1;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
-		saver1 = saver2;
+		//saver1 = saver2;
             return html;
         });
+		//}
 		}
-		}
 		
 		
 		
-		}, 10000);
+		}, 20000);
 		
 		//600000
 		
@@ -159,3 +165,25 @@
 
 	</script>
 </html>
+
+  
+            
+        
+    
+    
+    
+	
+    
+  
+    
+    
+    
+    
+    
+    
+    
+	<?php
+    }
+	
+//header("Refresh:5");	
+?>

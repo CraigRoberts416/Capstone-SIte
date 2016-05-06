@@ -1,37 +1,89 @@
 <?php
-ini_set('display_errors', 1);
 require_once('TwitterAPIExchange.php');
-
 /** Set access tokens here - see: https://dev.twitter.com/apps/ **/
 $settings = array(
-    'oauth_access_token' => "352037987-LQMtHQzhtaBpbb8TyFAkVx2lOSP2IDuwMaTJnuS5",
-    'oauth_access_token_secret' => "	Wi45eNMX06urGts4PN4ZEvy2GQgSFvihXTsVSHQj5PGxx",
-    'consumer_key' => "23CzECqKmyTwwIQGLtGrXkBtL",
-    'consumer_secret' => "iAUBN3OIwErlvKunpegojiP0sWNN8Iolfk3CVPUEXbKQMzCPq5"
+'oauth_access_token' => "352037987-gmk04jPQTrlrdXl74E5e1n3GnPko6CAsuDA0lL1E",
+'oauth_access_token_secret' => "csHsci4QS9J28hbeBSCkyhwkbMExqbMvEGGfWP0qSaem4",
+'consumer_key' => "23CzECqKmyTwwIQGLtGrXkBtL",
+'consumer_secret' => "iAUBN3OIwErlvKunpegojiP0sWNN8Iolfk3CVPUEXbKQMzCPq5"
 );
 
-/** URL for REST request, see: https://dev.twitter.com/docs/api/1.1/ **/
-$url = 'https://api.twitter.com/1.1/blocks/create.json';
-$requestMethod = 'POST';
+//$url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
+$url = "https://api.twitter.com/1.1/search/tweets.json";
 
-/** POST fields required by the URL above. See relevant docs as above **/
-$postfields = array(
-    'screen_name' => 'usernameToBlock', 
-    'skip_status' => '1'
-);
+$requestMethod = "GET";
 
-/** Perform a POST request and echo the response **/
+if (isset($_GET['user']))  {$user = $_GET['user'];}  else {$user  = "CraigRoberts416";}
+
+if (isset($_GET['count'])) {$count = $_GET['count'];} else {$count = 20;}
+
+//$getfield = "?screen_name=$user&count=$count";
+$getfield = "?q=%23CraigRobertsRoom&count=1";
+
 $twitter = new TwitterAPIExchange($settings);
-echo $twitter->buildOauth($url, $requestMethod)
-             ->setPostfields($postfields)
-             ->performRequest();
+$string = json_decode($twitter->setGetfield($getfield)
+->buildOauth($url, $requestMethod)
+->performRequest(),$assoc = TRUE);
 
-/** Perform a GET request and echo the response **/
-/** Note: Set the GET field BEFORE calling buildOauth(); **/
-$url = 'https://api.twitter.com/1.1/followers/ids.json';
-$getfield = '?screen_name=J7mbo';
-$requestMethod = 'GET';
-$twitter = new TwitterAPIExchange($settings);
-echo $twitter->setGetfield($getfield)
-             ->buildOauth($url, $requestMethod)
-             ->performRequest();
+
+
+if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string[errors][0]["message"]."</em></p>";exit();}
+
+
+foreach($string['statuses'] as $items)
+    {?>
+    
+    
+    
+    
+    <!doctype html>
+<html>
+
+    <head>
+    	<link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        
+        <title>Capstone</title>
+    
+    </head>
+    
+    <body>
+    
+    
+    <div id="bigTweetContainer">
+  
+            
+        
+    
+    
+    
+	<?php
+        echo "<div id='bigTweet'>". $items['entities']['urls'][0]['expanded_url']."</div>";
+	?>
+    
+    
+    </div>
+
+    </body>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+    <script type="text/javascript" src="js/twitterFetcher_min.js"></script>
+    <script type="text/javascript" src="js/exampleUsage.js"></script>
+    <script>
+	$(document).ready(function() {
+	var txt = $('#bigTweet').text();
+	});
+	</script>
+	</html>
+    
+    
+    
+    
+    
+    
+    
+	<?php
+    }
+	
+//header("Refresh:5");	
+?>

@@ -69,9 +69,9 @@
 // id "example1". Also automatically hyperlinks URLS and user mentions and
 // hashtags.
 var config1 = {
-  "id": '721761272317009921',
+  "id": '727327748302188545',
   "domId": 'tweets',
-  "maxTweets": 3,
+  "maxTweets": 1,
   "enableLinks": false,
   "showImages": false,
   "showPermalinks": false,
@@ -89,7 +89,7 @@ var config1 = {
 // request to Twitter specifiying we would like results where possible in
 // English language.
 var config2 = {
-  "id": '721761272317009921',
+  "id": '727327748302188545',
   "domId": 'bigTweet',
   "maxTweets": 1,
   "showImages": false,
@@ -106,7 +106,7 @@ var config2 = {
 // A simple example to get latest 5 tweets for #API tag and shows any images
 // attached to tweets.
 var config3 = {
-  "id": '721378921632149507',
+  "id": '727327748302188545',
   "domId": 'entertainment',
   "maxTweets": 1,
   "showImages": false,

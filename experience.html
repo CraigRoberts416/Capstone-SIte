@@ -1,0 +1,456 @@
+<!doctype html>
+<html>
+
+    <head>
+    	
+        <link rel="stylesheet" href="js/jquery-ui.theme.min.css">
+        <link rel="stylesheet" href="js/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="js/jquery-ui.min.css">
+        <link rel="stylesheet" href="js/jquery-ui.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        
+        <meta charset="UTF-8">
+        
+        <title>Capstone</title>
+    
+    </head>
+    
+    <body>
+    <div id="left"></div>
+    <div id="right"></div>
+    <div id="top"> click border to turn off/on the interface</div>
+    <div id="bottom"></div>
+    
+    <div id="capstoneInfo">
+    <div id="capstoneInfoText">
+    <h1>Design Meta-Ethics</h1>
+    <p>
+    Often, we make decisions on screen that affect real world moments and environments. We have the option to either inform, influence or entertain someone on the other side of the screen, but we often don't get to see the person we are affecting. The goal of this experience is to allow you, the designer, to make add to an environment while being able to witness your affects on your user. 
+    </p>
+    <p>
+    As designers, we make decisions for a group of users without them knowing it. We research and create personas that expose the vulnerabilities and aspiration of the audience. In the decision making process, we become the unelected representatives of our audience, and allow decision to be made based on what we know about our users. This is why I included my digital personas. The inclusion of my persona will allow you to be more informed as to who I am, and be more accountable for your decisions.
+    </p>
+    <p>
+    My goal as the user and subject of this experience is become more empathetic for the people I design for, by experiencing what is like to allow the media in my environment to be completely out of my control. For the first four years of my design experience, I have been researching the goals, aspirations, and attention triggers to create content that <b>I</b> wanted people to experience. I wanted to experience what it is like to have mulitiple designers demanding your attention, changing your environment, and feeding you content that <i>may or may not</i> have my best interest considered.
+    </p>
+    
+    </div>
+    </div>
+    
+    <div id="siteBG">
+    
+    
+    <iframe style="width:100vw; height:100vh;" src="https://www.youtube.com/embed/ezXy4AvNf8A?autoplay=1&showinfo=0&controls=0;vq=hd720" frameborder="0" allowfullscreen></iframe>
+   <!--<iframe style="width:50vw; height:50vh;" src="https://www.youtube.com/embed/ezXy4AvNf8A?autoplay=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
+    <iframe style="width:50vw; height:50vh;" src="https://www.youtube.com/embed/ezXy4AvNf8A?autoplay=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
+    <iframe style="width:50vw; height:50vh;" src="https://www.youtube.com/embed/ezXy4AvNf8A?autoplay=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>-->
+    
+    </div>
+    
+    
+    
+    <!--<div id="roomData" class="outsideInfo">
+    Duration:<div id="duration"> 5:23:42</div><br/>
+    Temperature:<div id="temp"> 90</div>&deg;<br/> 
+    Brightness:<div id="bright"> 37</div> lm
+    </div>-->
+    
+    <div id="projectInfo"  class="outsideInfo">
+	<a href="#" >project info</a><br/>
+    </div>
+    
+    <div id="siteButtons">
+    
+        <div id="liveNotice">Live Feed</div>
+        
+        <div id="delayNotice">Disclaimer: 8 Second Delay</div><br/>
+         <div id="elapseTimeC">Duration: <div id="elapseTime"></div> minutes</div>
+            <h1><div id="concept"></div> Craig Roberts</h1>
+            
+            <a href="#" id="tweetInstruct" class="buttons">Tweet A Message</a>  <a href="#" id="vidInstruct" class="buttons">Send a Vid</a>
+            <a href="#" id="roomControls" class="buttons">Room Controls</a>
+            
+          <div id="description"></div>
+          
+          <div id="dials">
+            
+            <!--<div id="tempValue">
+            <h2>Temperature</h2>
+            
+            <h3>Cooler</h3>
+            	<input type="radio" name="temp" value="coolDown">  Cool Down <br>
+  				<input type="radio" name="temp" value="warmUp">  Warm Up <br>
+            </div>-->
+            
+            <div id="lightValue">
+            <!-- <h2>Lights</h2> -->
+            
+            <div class="lightBox">
+            <h3>Hue</h3>
+            <div id="hue"></div>
+            </div>
+            
+            <div class="lightBox">
+            <h3>Brightness</h3>
+            <div id="slider"></div>
+            </div>
+            
+            <div class="lightBox">
+            <h3>Saturation</h3>
+            <div id="satur"></div>
+            </div>
+            
+            </div>
+            
+            
+          </div>
+        
+        
+    </div>
+    
+    <div id="latestTweet"  class="outsideInfo">
+		<h2>latest tweet</h2>
+        	
+            <div id="tweets"></div>
+        
+    </div>
+
+	<div id="stats"  class="outsideInfo">
+		<a href="https://www.facebook.com/craig.roberts.96742" target="_blank"> Facebook</a>
+        <a href="https://twitter.com/craigroberts416" target="_blank">Twitter</a>
+        <a href="www.instagram.com/craigrobertscreations/" target="_blank">Instagram</a>
+    </div>
+    
+    </body>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+    <script type="text/javascript" src="js/twitterFetcher_min.js"></script>
+    <script type="text/javascript" src="js/exampleUsage.js"></script>
+
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.structure.css"></script>
+
+    <script type="text/javascript" src="js/jquery-ui.theme.css"></script>
+    
+    <script type="text/javascript" src="js/air_conditioners.js"></script>
+    
+    <script type="text/javascript" src="js/index.js"></script>
+    
+    <script type="text/javascript" src="js/wink-accessory.js"></script>
+    
+<script type="text/javascript" src="js/typed.js"></script>
+    
+	<script>
+	
+	$(document).ready(function() {
+		var d2 = new Date("2016/05/03");
+		d2.setHours(18)  // some date
+		
+		$('#capstoneInfo').hide();
+		$('#dials').hide();
+		
+		$('#projectInfo a').click(function(e) {
+            $('#capstoneInfo').show();
+			 $("#capstoneInfo").animate({"opacity":"1"},1000);
+			
+        });
+		
+		$('#capstoneInfo').click(function(e) {
+			$("#capstoneInfo").animate({"opacity":"0"},1000);
+            $('#capstoneInfo').hide(200);
+			
+        });
+		
+		$('#roomControls').click(function(e) {
+			$('#dials').toggle();
+			//$('#liveNotice').toggle();
+			//$('#delayNotice').toggle();
+			
+        });
+		
+		
+		$("#slider").slider({
+			min: 1,
+     		max: 255,
+      		range: "min",
+      		value: 40,
+      		slide: function( event, ui ) {
+        		myFunction();
+				myFunction2();
+			}
+		});
+		
+		
+		
+		$("#satur").slider({
+			min: 1,
+     		max: 255,
+      		range: "min",
+      		value: 40,
+      		slide: function( event, ui ) {
+        		myFunction();
+				myFunction2();
+			}
+		});
+		
+		$("#hue").slider({
+			min: 1,
+     		max: 65535,
+      		range: "min",
+      		value: 30000,
+      		slide: function( event, ui ) {
+        		myFunction();
+				myFunction2();
+			}
+		});
+		
+		$( "#hue" ).css("background-image","url(images/hue.jpg)");
+		$( "#hue" ).css("height","10px");
+		$( "#hue" ).css("background-size","contain");
+		$( "#slider" ).css("background","-webkit-linear-gradient(left,black, white)");
+		$( "#satur" ).css("background","-webkit-linear-gradient(left,white, yellow)");
+		
+
+		$("#description").data('open','no');
+		$("#description").data('show','none');
+		$("#description").hide();
+		
+		$(".innerMenu").hide();
+		$(".innerMenu").data("open","no");
+		
+		$("#siteBG").click(function(e) {
+			$(".innerMenu").hide(500);
+			$("#siteButtons .sec").removeClass("line");
+		});
+		
+		$("#left").click(function(e) {
+			$("#siteButtons").toggle(500);
+			$("#latestTweet").toggle(500);
+		});
+		
+		$("#right").click(function(e) {
+			$("#siteButtons").toggle(500);
+			$("#latestTweet").toggle(500);
+		});
+		
+		
+		$("#top").click(function(e) {
+			$("#siteButtons").toggle(500);
+			$("#latestTweet").toggle(500);
+		});
+		
+		
+		$("#bottom").click(function(e) {
+			$("#siteButtons").toggle(500);
+			$("#latestTweet").toggle(500);
+		});
+		
+		$("#siteButtons .sec").click(function(e) {
+			var index = $(this).index("#siteButtons .sec");
+			$("#siteButtons .sec").addClass("line");
+			$(".innerMenu").hide(500);
+			$(".innerMenu").eq(index).show(500); 
+			$("#siteButtons .sec").eq(index).removeClass("line");
+		});
+		
+		
+		$('#tweetInstruct').click(function(e) {
+			
+			
+			
+			
+			if( ($("#description").data('open') == 'yes') && ($("#description").data('show') == 'vid') ){
+				$("#description").html("Use hashtag <b>#CraigRobertsRoom</b> to tweet a message into the space");
+				$("#description").data('show','tweet');
+			}
+			
+			else if( ($("#description").data('open') == 'yes') && ($("#description").data('show') == 'tweet') ){
+				$("#description").hide();
+				$("#description").data('open','no');
+			}
+			
+			
+			else if($("#description").data('open') == 'no'){
+            $("#description").html("Use hashtag <b>#CraigRobertsRoom</b> to tweet a message into the space");
+			 $("#description").show();
+			 $("#description").data('open','yes');
+			 $("#description").data('show','tweet');
+			}
+			
+        });
+		
+		
+		$('#vidInstruct').click(function(e) {
+			
+			if( ($("#description").data('open') == 'yes') && ($("#description").data('show') == 'vid') ){
+				$("#description").hide();
+				$("#description").data('open','no');
+			}
+			
+			else if( ($("#description").data('open') == 'yes') && ($("#description").data('show') == 'tweet') ){
+				$("#description").html("Use hashtag <b>#CraigRobertsRoom</b> to tweet a youtube video into the space");
+				$("#description").data('show','vid');
+			}
+			
+			
+			else if($("#description").data('open') == 'no'){
+            $("#description").html("Use hashtag <b>#CraigRobertsRoom</b> to tweet a youtube video into the space");
+			$("#description").show();
+			$("#description").data('open','yes');
+			$("#description").data('show','vid');
+			}
+
+        });
+		
+setInterval(function(){ twitterFetcher.fetch(config1); }, 10000);
+
+setInterval(function(){ $("#liveNotice").toggleClass('blink'); }, 500);
+
+setInterval(function(){
+	
+		var d1 = new Date(); //"now"
+		var diff = Math.abs(d1-d2);
+		 $("#elapseTime").html(parseInt((diff/(1000*60))%60));
+		 
+	  }, 100);
+
+
+		
+		
+		function myFunction() {
+		   var brightness = $("#slider").slider("value");
+		   var hueness = $("#hue").slider("value");
+		   var sat = $("#satur").slider("value");
+		   var client = new XMLHttpRequest();
+		   client.open("PUT", "http://173.3.112.220/api/newdeveloper/lights/5/state");
+		   client.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+		   client.send('{"hue":'+hueness+',"sat": '+sat+',"bri":'+brightness+'}');
+		}
+		
+		
+		function myFunction2() {
+		   var brightness = $("#slider").slider("value");
+		   var hueness = $("#hue").slider("value");
+		   var sat = $("#satur").slider("value");
+		   var client = new XMLHttpRequest();
+		   client.open("PUT", "http://173.3.112.220/api/newdeveloper/lights/1/state");
+		   client.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+		   client.send('{"hue":'+hueness+',"sat": '+sat+',"bri":'+brightness+'}');
+		}
+		
+		function myFunction3() {
+		   var client = new XMLHttpRequest();
+		   client.open("PUT", "http://173.3.112.220/api/newdeveloper/lights/5/state");
+		   client.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+		   client.send('{"hue":'+hueness+',"sat": '+sat+',"bri":'+brightness+'}');
+		}
+		
+		
+		function myFunction4() {
+		   var client = new XMLHttpRequest();
+		   client.open("PUT", "http://173.3.112.220/api/newdeveloper/lights/1/state");
+		   client.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+		   client.send('{"hue":'+hueness+',"sat": '+sat+',"bri":'+brightness+'}');
+		}
+
+
+$('#top').hover(
+function(){
+	$('#top').css('background-color','white');
+	$('#left').css('background-color','white');
+	$('#right').css('background-color','white');
+	$('#bottom').css('background-color','white');
+	$('#top').css('cursor','pointer');
+},
+function(){
+	$('#top').css('background-color','yellow');
+	$('#left').css('background-color','yellow');
+	$('#right').css('background-color','yellow');
+	$('#bottom').css('background-color','yellow');
+	$('#top').css('cursor','default');
+});
+
+
+
+
+$('#left').hover(
+function(){
+	$('#top').css('background-color','white');
+	$('#left').css('background-color','white');
+	$('#right').css('background-color','white');
+	$('#bottom').css('background-color','white');
+	$('#left').css('cursor','pointer');
+},
+function(){
+	$('#top').css('background-color','yellow');
+	$('#left').css('background-color','yellow');
+	$('#right').css('background-color','yellow');
+	$('#bottom').css('background-color','yellow');
+	$('#left').css('cursor','default');
+});
+
+
+
+$('#right').hover(
+function(){
+	$('#top').css('background-color','white');
+	$('#left').css('background-color','white');
+	$('#right').css('background-color','white');
+	$('#bottom').css('background-color','white');
+	$('#right').css('cursor','pointer');
+},
+function(){
+	$('#top').css('background-color','yellow');
+	$('#left').css('background-color','yellow');
+	$('#right').css('background-color','yellow');
+	$('#bottom').css('background-color','yellow');
+	$('#right').css('cursor','default');
+});
+
+
+
+$('#bottom').hover(
+function(){
+	$('#top').css('background-color','white');
+	$('#left').css('background-color','white');
+	$('#right').css('background-color','white');
+	$('#bottom').css('background-color','white');
+	$('#bottom').css('cursor','pointer');
+},
+function(){
+	$('#top').css('background-color','yellow');
+	$('#left').css('background-color','yellow');
+	$('#right').css('background-color','yellow');
+	$('#bottom').css('background-color','yellow');
+	$('#bottom').css('cursor','default');
+});
+
+$(function(){
+      $("#concept").typed({
+        strings: [ "Inform", "Entertain", "Disturb", "Influence"],
+        typeSpeed: 200,
+		loop: true
+      }); });
+	  
+	  function msToTime(duration) {
+        var milliseconds = parseInt((duration%1000)/100)
+            , seconds = parseInt((duration/1000)%60)
+            , minutes = parseInt((duration/(1000*60))%60)
+            , hours = parseInt((duration/(1000*60*60))%24);
+
+        hours = (hours < 10) ? "0" + hours : hours;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+        return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+    }
+
+
+	});
+		
+	
+	</script>
+</html>

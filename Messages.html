@@ -11,14 +11,11 @@
     </head>
     
     <body>
-    <div id="left"></div>
-    <div id="right"></div>
-    <div id="top"> click border to turn off/on the interface</div>
-    <div id="bottom"></div>
+    
     
     <div id="bigTweetContainer">
   
-            <div id="bigTweet" style="font-weight:200; margin-top:25%">Experience will be upgraded and resumed at a later date</div>
+            <div id="concept" style="color:white; font-size:40px;"></div>
         
     </div>
 
@@ -27,8 +24,21 @@
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
     <script type="text/javascript" src="js/twitterFetcher_min.js"></script>
+    <script type="text/javascript" src="js/exampleUsage.js"></script>
+    <script type="text/javascript" src="js/typed.js"></script>
 	<script>
+	
+	$(document).ready(function() {
+		setInterval(function(){ twitterFetcher.fetch(config2); }, 5000);
 		
+	});
+		
+	$(function(){
+      $("#concept").typed({
+        strings: [ "Inform", "Entertain", "Disturb", "Influence"],
+        typeSpeed: 10,
+		loop: true
+      }); });
 	
 	</script>
 </html>
