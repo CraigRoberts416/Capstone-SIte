@@ -505,6 +505,7 @@ iframe{
 	vertical-align:middle;
 	margin-top:10%;
 	word-wrap: break-word;
+	z-index:200;
 }
 
 #bigTweet ul{
@@ -547,7 +548,11 @@ iframe{
 	float:left;
 }
 
-
+#tweetImage img{
+	height:600px;
+   margin-left: 30%;
+    margin-top: 10vh;
+}
 
 
 
