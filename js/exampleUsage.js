@@ -71,7 +71,7 @@
 var config1 = {
   "id": '727327748302188545',
   "domId": 'tweets',
-  "maxTweets": 1,
+  "maxTweets": 2,
   "enableLinks": false,
   "showImages": false,
   "showPermalinks": false,

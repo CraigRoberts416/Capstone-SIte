@@ -134,6 +134,7 @@ iframe{
 	z-index:-100;
 	float:left;
 	pointer-events: none;
+	
 }
 
 #siteButtons{
